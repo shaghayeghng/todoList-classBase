@@ -1,11 +1,17 @@
 import React, { Component } from "react";
+import './Form.css';
 
-class AddBar extends Component {
+class Form extends Component {
   state = { addItem: "" };
   //event handler
   onFormSubmit = (event) => { 
     event.preventDefault();
-    this.props.onSubmit(this.state.addItem);
+
+    this.props.onSubmit({ 
+      TodoText: this.state.addItem, 
+      checked: false, 
+      id: Math.random() * 100,});
+
     this.setState({ addItem: "" });
   };
 
@@ -31,4 +37,4 @@ class AddBar extends Component {
     );
   }
 }
-export default AddBar;
+export default Form;

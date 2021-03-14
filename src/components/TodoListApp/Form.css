@@ -1,0 +1,73 @@
+.todo-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* text-align: center; */
+    margin-bottom: 20px;
+}
+
+.add-form {
+    margin-top: 2%;
+    display: flex;
+    /* flex-direction: row; */
+    padding-top: 20px;
+    padding-bottom: 10px;
+}
+.add-form input {
+    display: inline-block;
+    font-size: large;
+    border: 2px solid #182848;
+    margin-left: 1%;
+    padding: 10px;
+    outline: none;
+}
+
+button {
+    display: inline-block;
+    background-color: white;
+    border: none;
+    color: black; 
+    border: 2px solid #182848;
+    padding: 10px;
+    text-align: center;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #182848;
+    color: white;
+}
+
+h3 {
+    margin: 1%;
+}
+
+.filter-bar {
+    border: 2px solid #182848;
+    box-shadow: 0 1px 0 1px rgba(0,0,0,.04);
+    transition: all 150ms ease;
+    margin: 0 3%;
+    border-radius: .5em;
+}
+.filter-bar:hover {
+	border-color: #182848;
+}
+.filter-bar:focus {
+	border-color: #182848;
+	color: #182848;
+	outline: none;
+}
+.filter-bar option {
+	font-weight:normal;
+}
+
+h1 {
+    font-size: 3rem;
+    display: block;
+    color: white;
+    margin-top: 3%;
+}
+
