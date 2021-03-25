@@ -1,19 +1,23 @@
-import React from 'react';
-import Todo from './Todo';
+import React from "react";
+import Todo from "./Todo";
 
-const TodoList = ({todos}) => {
-    return (
-        <div>
-            {todos.map((todo) => {
-                return (
-                    <Todo 
-                        TodoText={todo.TodoText}
-                        checked={todo.checked} 
-                    />
-                );
-            })}
-        </div>
-    );
+const TodoList = ({ todos, filteredTodos, setTodos }) => {
+  return (
+    <div>
+      {filteredTodos.map((todo) => {
+        return (
+          <Todo
+            todo={todo}
+            todos={todos}
+            setTodos={setTodos}
+            key={todo.id}
+            // .TodoText={todo.TodoText}
+            // checked={todo.checked}
+          />
+        );
+      })}
+    </div>
+  );
 };
 
 export default TodoList;
