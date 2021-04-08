@@ -1,0 +1,87 @@
+.auth {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.auth-container {
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: #263544;
+  background: 191919;
+  padding: 40px 50px;
+  text-align: center;
+  width: 400px;
+}
+.email-input,
+.username-input,
+.password-input,
+.submit-btn {
+  align-items: center;
+  text-align: center;
+  font-weight: lighter;
+  font-size: 19px;
+  width: 250px;
+  margin: 20px auto;
+  background: none;
+  display: block;
+  color: white;
+  border-radius: 30px;
+  border: 2px solid #3498db;
+  text-decoration: none;
+  outline: none;
+  padding: 17px 19px;
+  transition: all 0.25s;
+}
+.email-input:focus,
+.username-input:focus,
+.password-input:focus {
+  width: 300px;
+  border-color: #2ecc77;
+}
+.submit-btn {
+  width: 170px;
+  cursor: pointer;
+}
+.submit-btn:hover {
+  background: #2ecc77;
+  border-color: #2ecc77;
+}
+.toggle {
+  display: flex;
+  cursor: pointer;
+  justify-content: space-around;
+}
+.toggle h2 {
+  user-select: none;
+}
+
+.auth h1 {
+  margin: 50px;
+  margin-top: 8%;
+}
+
+.auth h2 {
+  font-size: 2rem;
+  color: #cce5ff;
+}
+
+.auth-form {
+  animation-name: fadeIn;
+  animation-duration: 0.5s;
+  transition: all 0.5s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.active {
+  color: #35bcfa !important;
+}

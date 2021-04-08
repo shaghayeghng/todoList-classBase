@@ -1,12 +1,57 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 body {
-    background: rgb(78, 9, 121);
-    background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
-
+  background: rgb(78, 9, 121);
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
 }
-  
+
+.home-page {
+  position: relative;
+  background-image: url("./images/glenn-carstens-peters-RLw-UC03Gwc-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: relative;
+  height: 730px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: "Raleway", sans-serif !important;
+}
+
+.welcome-home {
+  position: relative;
+  animation: animatetop 1s;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 3rem;
+  padding: 2%;
+  border-bottom: solid 2px black;
+}
+
+.description {
+  position: relative;
+  animation: animatetop 1s;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 2rem;
+  margin: 2%;
+}
+
+@keyframes animatetop {
+  0% {
+    top: -300px;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    opacity: 1;
+  }
+}

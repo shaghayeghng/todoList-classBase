@@ -1,6 +1,8 @@
 import React from "react";
 import TaskAdder from "./TaskAdder";
 import TodoList from "./TodoList";
+import Cookies from "universal-cookie";
+import axios from "axios";
 
 class TodoListApp extends React.Component {
   state = {
@@ -8,6 +10,37 @@ class TodoListApp extends React.Component {
     filteredTodos: [],
     selectedOption: "all",
   };
+  cookies = new Cookies();
+  token = this.cookies.get("token");
+
+  componentDidMount = async () => {
+    try {
+      const userData = await axios.get(
+        "http://localhost:8000/api/v1/users/me",
+        {
+          headers: {
+            Authorization: `Bearer ${this.token}`, //means the header have token
+          },
+        }
+      ); //ta motmaen shim token doroste
+      console.log(userData.data.data.doc.username);
+      this.props.usernameHandler(userData.data.data.doc.username);
+      this.getTodos();
+    } catch (error) {
+      console.log(error.response.data.message);
+    }
+  };
+
+  getTodos = async () => {
+    const userTodos = await axios.get("http://localhost:8000/api/v1/todos", {
+      headers: {
+        Authorization: `Bearer ${this.token}`, //means the header have token
+      },
+    });
+    console.log(userTodos);
+    this.setTodos(userTodos.data.todos);
+  };
+
   componentDidUpdate(prevProps, prevState, snapShot) {
     //! this.filterOptionHandler();
     //dakhl componentDidUpdate nabyd functioni bashe ke baes she component dobare render beshe
@@ -35,14 +68,14 @@ class TodoListApp extends React.Component {
       case "finished":
         this.setState({
           filteredTodos: this.state.todos.filter(
-            (task) => task.checked === true
+            (task) => task.isChecked === true
           ),
         });
         break;
       case "unfinished":
         this.setState({
           filteredTodos: this.state.todos.filter(
-            (task) => task.checked === false
+            (task) => task.isChecked === false
           ),
         });
         break;
@@ -55,12 +88,14 @@ class TodoListApp extends React.Component {
     return (
       <div>
         <TaskAdder
+          token={this.token}
           todos={this.state.todos}
           onFilterChange={this.onFilterChange}
           onSubmit={this.setTodos}
           selectedFilter={this.selectedOption}
         />
         <TodoList
+          token={this.token}
           todos={this.state.todos}
           filteredTodos={this.state.filteredTodos}
           setTodos={this.setTodos}

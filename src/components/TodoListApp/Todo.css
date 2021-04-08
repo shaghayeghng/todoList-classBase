@@ -17,7 +17,7 @@
   justify-content: space-between;
   align-items: center;
   background: #cce5ff;
-  width: 500px;
+  width: 600px;
   margin: 5px;
   border-radius: 5px;
   text-align: left;
@@ -30,6 +30,7 @@
 
 .todo-list button {
   border-radius: 5px;
+  padding: 10px;
 }
 
 .completed {

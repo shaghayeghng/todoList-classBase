@@ -1,9 +1,14 @@
 import React from 'react';
-// import Home from '../components/Home';
 
 const HomePage = () => {
-    // return <Home />;
-    return <div>Home</div>
+    return <div className="home-page">
+        <span className="welcome-home">
+            Welcome to ToDo List App
+        </span>
+        <div className="description">
+            An app to manage your tasks.
+        </div>
+    </div>
 };
 
 export default HomePage;

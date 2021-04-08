@@ -6,6 +6,11 @@
   margin-bottom: 20px;
 }
 
+.title {
+  margin-top: 8%;
+
+}
+
 .add-form {
   margin-top: 2%;
   display: flex;
@@ -27,7 +32,7 @@ button {
   border: none;
   color: black;
   border: 2px solid #182848;
-  padding: 10px;
+  padding: 10px 13px;
   text-align: center;
   font-size: 16px;
   transition-duration: 0.4s;
@@ -44,20 +49,43 @@ h3 {
 }
 
 .filter-bar {
+  margin: 0 3%;
+  position: relative;
+}
+
+select {
   border: 2px solid #182848;
   box-shadow: 0 1px 0 1px rgba(0, 0, 0, 0.04);
   transition: all 150ms ease;
-  margin: 0 3%;
-  padding: 5px 30px 5px 5px;
+  padding: 16px 10px;
+  width: 140px;
   border-radius: 0.5em;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
-.filter-bar:hover {
+select:hover {
   border-color: #182848;
 }
-.filter-bar:focus {
+select:focus {
   border-color: #182848;
   color: #182848;
   outline: none;
+}
+
+.fa-sort-down {
+  position: absolute;
+  text-align: center;
+  border-bottom-right-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  border: 2px solid #182848;
+  left: 90px;
+  right: 0;
+  padding: 7px 0 16px 0;
+  font-size: 1.5rem;
+  background-color: #62b7fc;
+  color: whitesmoke;
+  cursor: pointer;
+  pointer-events: none;
 }
 
 h1 {
